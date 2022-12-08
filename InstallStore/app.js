@@ -10,8 +10,11 @@
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker green">Preview</span>';
             else if (branch == 'release')
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store';
-            if (!ZellaSoft.IsLedge() && document.cookie != 'wpwarn=true') {
-                alert("Please use Microsoft Edge on your Windows 10 Mobile.");
+            let lem = navigator.userAgent.indexOf("Mobile Safari") != -1;
+            let dnwk = !ZellaSoft.IsSafari();
+            let lea = navigator.platform === "ARM";
+            if (!(ZellaSoft.IsLedge() && lea && lem && dnwk) && document.cookie != 'wpwarn=true') {
+                alert("Please use Microsoft Edge on Windows 10 Mobile for this site to work.");
                 document.cookie = 'wpwarn=true';
             }/**/
 
