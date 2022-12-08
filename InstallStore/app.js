@@ -10,9 +10,10 @@
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker green">Preview</span>';
             else if (branch == 'release')
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store';
-            /*if (!ZellaSoft.IsLedge()) {
-                alert("Please use Microsoft Edge for Windows Phone");
-            }*/
+            if (!ZellaSoft.IsLedge() && document.cookie != 'wpwarn=true') {
+                alert("Please use Microsoft Edge on your Windows 10 Mobile.");
+                document.cookie = 'wpwarn=true';
+            }/**/
 
         },
         "Unload": function () {
@@ -34,7 +35,7 @@
             return ZellaSoft.Sideload(location.origin.toString() + location.pathname.toString() + 'ZellaStore.appxbundle');
         },
         "Guide": function (tag) {
-            return ZellaSoft.View.Navigate(location.origin.toString() + '/Guides/' + tag);
+            return ZellaSoft.View.Navigate(location.origin.toString() + '/Guides/' + (tag || ''));
         }
     };
 })
