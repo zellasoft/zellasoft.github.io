@@ -112,6 +112,17 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             return false;
         },
+        "IsSafari": function () {
+            try {
+                /constructor/i.test(window.HTMLElement) || (
+                    function (p) {
+                        return p.toString() === "[object SafariRemoteNotification]";
+                    }
+                )(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+            } catch (ex) {
+                return false;
+            }
+        },
         "RunApp": function (appjs) {
             try {
                 ZellaSoft.App = eval(appjs)();
