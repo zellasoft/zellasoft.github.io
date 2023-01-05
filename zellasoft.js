@@ -1,5 +1,4 @@
 function ErrorReport(th, ex, ad) {
-    console.log('err dbg');
     var xhr = new XMLHttpRequest();
     xhr.open("POST", location.origin.toString() + "/crashreport/submit");
     xhr.setRequestHeader("Accept", "application/json");
@@ -21,15 +20,6 @@ window.addEventListener('DOMContentLoaded', function () {
             document.documentElement.style.setProperty('--scroll-top', e.srcElement.scrollTop + 'px');
             document.documentElement.style.setProperty('--scroll-bottom', 'calc(var(--scroll-top) + ' + getComputedStyle(e.srcElement).height + ')');
         }, false);
-        /*onpopstate = function (e) {
-            if ('frame' in e) {
-            }
-        };
-        function LoadFrame(response, urlPath) {
-            document.getElementById("content").innerHTML = response.html;
-            document.title = response.pageTitle;
-            window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
-        }*/
     } catch (ex) { }
     App = {};
     ZellaSoft = {
@@ -71,6 +61,29 @@ window.addEventListener('DOMContentLoaded', function () {
                     }
                 }
                 return undefined;
+            },
+            "ContentDialog": function (msg) {
+                let ou1 = document.createElement('div');
+                let ou2 = document.createElement('div');
+                let tx = document.createElement('span');
+                let ch = document.createElement('div');
+                let chi = document.createElement('div');
+                let acb = document.createElement('button');
+                ou1.classList.add('contentdialog');
+                ou2.classList.add('content-box');
+                ou2.classList.add('bordered-shadow');
+                tx.innerText = msg.toString();
+                ch.classList.add('chin');
+                acb.classList.add('bordered-shadow');
+                acb.innerText = "OK";
+                chi.appendChild(acb);
+                ch.appendChild(chi);
+                ou2.appendChild(tx);
+                ou2.appendChild(ch);
+                ou1.appendChild(ou2);
+                acb.dghost = ou1;
+                acb.onclick = function () { document.body.removeChild(this.dghost); }
+                document.body.appendChild(ou1);
             }
         },
         "Launchers": {
@@ -98,11 +111,17 @@ window.addEventListener('DOMContentLoaded', function () {
                 document.body.removeChild(dwnl);
             }
         },
-        "Sideload": function (url) {
+        "msSideload": function (url) {
             return ZellaSoft.Launchers.GenericURI("ms-appinstaller:?source=" + url);
+        },
+        "iOSSideload": function (url) {
+            return ZellaSoft.View.Navigate("itms-services://?action=download-manifest&url=" + url);
         },
         "DeveloperSettings": function () {
             return ZellaSoft.Launchers.GenericURI("ms-settings:developers");
+        },
+        "iOSCertificatesSettings": function () {
+            return ZellaSoft.View.Navigate("prefs:root=General");
         },
         "IsLedge": function () {
             try {
@@ -112,13 +131,10 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             return false;
         },
-        "IsSafari": function () {
+        "IsiPhoneSafari": function () {
             try {
-                return /constructor/i.test(window.HTMLElement) || (
-                    function (p) {
-                        return p.toString() === "[object SafariRemoteNotification]";
-                    }
-                )(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+                let rg = /(Mozilla\/5.0 )(\(iPhone; CPU iPhone OS )[0-9,_]*( like Mac OS X\) AppleWebKit\/)[0-9,.]*( \(KHTML, like Gecko\) Version\/)[0-9,.]*( Mobile\/)[^ ]*( Safari\/)[0-9,.]*/gm;
+                return navigator.platform === "iPhone" && rg.test(navigator.userAgent);
             } catch (ex) {
                 return false;
             }
