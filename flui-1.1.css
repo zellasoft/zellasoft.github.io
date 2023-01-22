@@ -1,5 +1,7 @@
-:root {
-    --accent-color: #0087ca;
+html {
+    background-color: #FAFAFA;
+    height: 100%;
+    --accent-color: highlight;
 }
 
 html, body {
@@ -17,12 +19,6 @@ html, body {
     user-select: none;
     cursor: default;
 }
-
-html {
-    background-color: #FAFAFA;
-    height: 100%;
-}
-
 
 .contentdialog {
     position: relative;
@@ -64,10 +60,10 @@ html {
 }
 
 
-.button {
+button {
     border-width: 0px;
     color: white;
-    background-color: #0087ca;
+    background-color: var(--accent-color);
     padding: 5px 6px;
     border-radius: 5px;
 }
@@ -83,7 +79,7 @@ html {
 }
 
 .shine {
-    background-image: linear-gradient(270deg, rgba(100, 181, 239, 0) 48.44%, #64b5ef 75.52%, rgba(100, 181, 239, 0) 100%);
+    background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 48.44%, rgba(181, 181, 181, 0.50) 75.52%, rgba(0, 0, 0, 0) 100%);
     background-repeat: no-repeat;
     animation: shine-move linear 3.2s infinite;
 }
@@ -101,9 +97,9 @@ html {
     width: 200px;
     height: 200px;
     /*
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            */
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    */
 }
 
 .shadow {
@@ -250,7 +246,7 @@ center {
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--accent-color);
+            background-color: #222222;
             transform-origin: bottom center;
             transition: transform 0.125s ease-out;
         }
@@ -267,10 +263,6 @@ blocks {
     display: block;
     width: 100px;
     height: 100px;
-}
-
-.background {
-    /*background: url(null);*/
 }
 
 #ProductDisplayName {
