@@ -17,11 +17,15 @@
                 } else {
                     /* x86 */
                 }
+            } else if (ZellaSoft.IsiPadSafari()) {
+                let ipadosinstall = document.getElementById('iPadOSSideload');
+                ipadosinstall.classList.remove('hidden');
             } else if (ZellaSoft.IsiPhoneSafari()) {
                 let iosinstall = document.getElementById('iOSSideload');
                 iosinstall.classList.remove('hidden');
             } else {
-                ZellaSoft.View.ContentDialog("Please use the native web browser that came preinstalled with your operating system.");
+                ZellaSoft.View.ContentDialog('Platform:' + navigator.platform.toString() + '\n' + navigator.userAgent.toString());
+                /*ZellaSoft.View.ContentDialog("Please use the native web browser that came preinstalled with your operating system.");*/
             }
         },
         "Unload": function () {
