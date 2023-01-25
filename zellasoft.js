@@ -131,9 +131,19 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             return false;
         },
+        "IsiPadSafari": function () {
+            try {
+                let rg = /(Mozilla\/5.0 )(\(Macintosh; Intel Mac OS X )[0-9,_]*(\) AppleWebKit\/)[0-9,.]*( \(KHTML, like Gecko\) Version\/)[0-9,.]*( Safari\/)[0-9,.]*/gm;
+
+                return navigator.platform === "MacIntel" && rg.test(navigator.userAgent);
+            } catch (ex) {
+                return false;
+            }
+        },
         "IsiPhoneSafari": function () {
             try {
                 let rg = /(Mozilla\/5.0 )(\(iPhone; CPU iPhone OS )[0-9,_]*( like Mac OS X\) AppleWebKit\/)[0-9,.]*( \(KHTML, like Gecko\) Version\/)[0-9,.]*( Mobile\/)[^ ]*( Safari\/)[0-9,.]*/gm;
+
                 return navigator.platform === "iPhone" && rg.test(navigator.userAgent);
             } catch (ex) {
                 return false;
