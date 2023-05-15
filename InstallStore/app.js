@@ -26,7 +26,7 @@
                 let iosinstall = document.getElementById('iOSSideload');
                 iosinstall.classList.remove('hidden');
             } else {
-                if (ZellaSoft.View.Parameter('debug').toLowerCase() == 'true') {
+                if (ZellaSoft.View.Parameter('debug') == 'true') {
                     ZellaSoft.View.ContentDialog('Platform:' + navigator.platform.toString() + '\n' + navigator.userAgent.toString());
                 } else {
                     ZellaSoft.View.ContentDialog("Please use the native web browser that came preinstalled with your operating system.");
