@@ -11,11 +11,12 @@
             else if (branch == 'release')
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store';
             if (ZellaSoft.IsLedge()) {
-                /**/ShowLedgeOutDate();
                 let uwpinstall = document.getElementById('W10MSideload');
                 if (navigator.platform === "ARM") {
                     uwpinstall.classList.remove('hidden');
-                } else /* x86 */ {
+                    App.ShowLedgeOutDate();
+                } else {
+                    /* x86 */
                     ZellaSoft.View.ContentDialog("It is possible that sideloading will fail due to the wrong architecture of your device.");
                     uwpinstall.classList.remove('hidden');
                 }
