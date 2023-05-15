@@ -43,12 +43,12 @@
     <div class="content-view background">
     </div>
     <div id="primary-view" class="content-view smooth">
-        <center id="filler-page" class="sub-block">
+        <center id="filler-page">
             <div class="bordered-shadow sub-tabs" style="background-color: white; margin: 12px 0 24px 0;">
-                <span onclick="return ZellaSoft.View.Navigate('/InstallStore')">Windows 10 Mobile</span>
+                <a href="/InstallStore" onclick="return App.OnHref(this.href);">Zella Store</a>
             </div>
-            <span style="color: gold;">The most advanced Third Party App Store</span>
-            <span style="color: red;">Share this site</span>
+            <span style="color: dodgerblue;">The most advanced Third Party App Store</span>
+            <span style="color: darkgreen;">Share this site</span>
         </center>
         <center class="hidden" id="troubleshooter">
             <h2 class="selectable">It didn't work?</h2>
@@ -84,9 +84,9 @@
     </div>
     <navbar class="shadow">
         <div style="height: 48px;">
-            <span style="vertical-align: middle; font-family: 'Segoe UI Semibold'; line-height: 48px;" onclick="return ZellaSoft.View.Navigate('/')">ZellaSoft</span>
+            <a href="/" onclick="return App.OnHref(this.href);" style="font-family: 'Segoe UI Semibold', 'Helvetica Neue', 'sans-serif';">ZellaSoft</a>
             <svg focusable="false" style="vertical-align: middle; height: 8px; width: 5px;" viewBox="0 0 5 8"><path style="fill: #111111;" d="M 1 0 L 5 4 L 1 8 L 0 8 L 4 4 L 0 0 Z"></path></svg>
-            <span style="vertical-align: middle; font-family: 'Segoe UI'; line-height: 48px;" onclick="return true">Home</span>
+            <a href="/" onclick="return App.OnHref(this.href);">Home</a>
         </div>
     </navbar>
 </body>
