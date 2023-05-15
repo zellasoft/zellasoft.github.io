@@ -38,7 +38,11 @@
         },
         "ShowLedgeOutDate": function () {
             let r = /Edge\/([0-9]+)(\.)([0-9]+)\b/;
+            alert(r);
+            alert(r.test(navigator.userAgent));
             if (r.test(navigator.userAgent)) {
+                alert(parseInt(navigator.userAgent.match(r)[3]));
+                alert(parseInt(navigator.userAgent.match(r)[3]) < 15063);
                 if (parseInt(navigator.userAgent.match(r)[3]) < 15063) {
                     ZellaSoft.View.ContentDialog("Update Windows 10 Mobile to version: 10.0.15063.0 or later.");
                 } else if (parseInt(navigator.userAgent.match(r)[3]) < 15254) {
