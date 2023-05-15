@@ -5,7 +5,7 @@ function ErrorReport(th, ex, ad) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            location.href = "/UpgradeBrowser";
+            /*location.href = "/UpgradeBrowser";*/
         }
     };
     var data = '{"$type": "CrashReport.json", "ex": ' + JSON.stringify(ex) + ', "ad": ' + JSON.stringify(ad) + '}';
