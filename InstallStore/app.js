@@ -1,7 +1,7 @@
 (function () {
     return {
         "Run": function () {
-            let branch = ZellaSoft.View.Parameter('branch');
+            let branch = ZellaSoft.View.Parameter('branch') || 'alpha';
             if (branch == 'alpha')
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker red">Alpha</span>';
             else if (branch == 'beta')
