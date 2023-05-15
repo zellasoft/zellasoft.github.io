@@ -11,7 +11,7 @@
             else if (branch == 'release')
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store';
             if (ZellaSoft.IsLedge()) {
-                ShowLedgeOutDate();
+                /*ShowLedgeOutDate();*/
                 let uwpinstall = document.getElementById('W10MSideload');
                 if (navigator.platform === "ARM") {
                     uwpinstall.classList.remove('hidden');
