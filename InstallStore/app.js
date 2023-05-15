@@ -44,8 +44,6 @@
                     ZellaSoft.View.ContentDialog("Update Windows 10 Mobile to version 10.0.15063.0 or later.");
                 } else if (parseInt(navigator.userAgent.match(r)[3]) < 15254) {
                     ZellaSoft.View.ContentDialog("Optional update to Windows 10 Mobile 10.0.15254.603.");
-                } else if (parseInt(navigator.userAgent.match(r)[3]) < 22000) {
-                    ZellaSoft.View.ContentDialog("Running Noice OS");
                 }
             }
         },
