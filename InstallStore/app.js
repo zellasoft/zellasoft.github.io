@@ -10,28 +10,37 @@
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker green">Preview</span>';
             else if (branch == 'release')
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store';
+            let bsupported = false;
             if (ZellaSoft.IsLedge()) {
                 let uwpinstall = document.getElementById('W10MSideload');
                 if (navigator.platform === "ARM") {
                     uwpinstall.classList.remove('hidden');
+                    bsupported = false;
                     App.ShowLedgeOutDate();
                 } else {
                     /* x86 */
                     ZellaSoft.View.ContentDialog("It is possible that sideloading will fail due to the wrong architecture of your device.");
                     uwpinstall.classList.remove('hidden');
+                    bsupported = false;
                 }
             } else if (ZellaSoft.IsiPadSafari()) {
                 let ipadosinstall = document.getElementById('iPadOSSideload');
                 ipadosinstall.classList.remove('hidden');
+                    bsupported = false;
             } else if (ZellaSoft.IsiPhoneSafari()) {
                 let iosinstall = document.getElementById('iOSSideload');
                 iosinstall.classList.remove('hidden');
+                    bsupported = false;
             } else {
                 if (ZellaSoft.View.Parameter('debug') == 'true') {
                     ZellaSoft.View.ContentDialog('Platform:' + navigator.platform.toString() + '\n' + navigator.userAgent.toString());
                 } else {
                     ZellaSoft.View.ContentDialog("Please use the native web browser that came preinstalled with your operating system.");
                 }
+            }
+            if (bsupported === true) {
+                let eluns = document.getElementById('unsupportedplaceholder');
+                eluns.classList.add('hidden');
             }
         },
         "Unload": function () {
