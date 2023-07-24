@@ -15,22 +15,22 @@
                 let uwpinstall = document.getElementById('W10MSideload');
                 if (navigator.platform === "ARM") {
                     uwpinstall.classList.remove('hidden');
-                    bsupported = false;
+                    bsupported = true;
                     App.ShowLedgeOutDate();
                 } else {
                     /* x86 */
                     ZellaSoft.View.ContentDialog("It is possible that sideloading will fail due to the wrong architecture of your device.");
                     uwpinstall.classList.remove('hidden');
-                    bsupported = false;
+                    bsupported = true;
                 }
             } else if (ZellaSoft.IsiPadSafari()) {
                 let ipadosinstall = document.getElementById('iPadOSSideload');
                 ipadosinstall.classList.remove('hidden');
-                    bsupported = false;
+                    bsupported = true;
             } else if (ZellaSoft.IsiPhoneSafari()) {
                 let iosinstall = document.getElementById('iOSSideload');
                 iosinstall.classList.remove('hidden');
-                    bsupported = false;
+                    bsupported = true;
             } else {
                 if (ZellaSoft.View.Parameter('debug') == 'true') {
                     ZellaSoft.View.ContentDialog('Platform:' + navigator.platform.toString() + '\n' + navigator.userAgent.toString());
