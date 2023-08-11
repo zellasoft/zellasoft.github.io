@@ -1,6 +1,7 @@
 (function () {
     return {
         "Run": function () {
+            return;
             document.getElementById('primary-view').innerHTML = '<center id="GuideWrapper" class="smooth"><h2 class="selectable">Browsing...</h2><span class="selectable">Opening guide...</span></center>';
             let flnm = ZellaSoft.View.Parameter('name') || 'guide404';
             let xhr = new XMLHttpRequest();
