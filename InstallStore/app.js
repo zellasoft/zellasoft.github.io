@@ -88,7 +88,7 @@
             return ZellaSoft.iOSSideload(location.origin + location.pathname + url.toString());
         },
         "Guide": function (tag) {
-            return ZellaSoft.View.Navigate(location.origin.toString() + '/Guides/' + (tag || ''));
+            return ZellaSoft.View.Navigate(location.origin.toString() + '/Guides/?name=' + (tag || 'guide404'));
         },
         "OnHref": function (url) {
             return ZellaSoft.View.Navigate(url.toString());
