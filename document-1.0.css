@@ -1,0 +1,78 @@
+.doc-1-0 {
+    padding: 0em 1em;
+}
+    /* Doc-Index */
+    .doc-1-0 ul, .doc-1-0 ul li {
+        list-style-type: none;
+    }
+
+    .doc-1-0 .code {
+        border: solid gray;
+        border-width: 1px;
+        background-color: #222;
+        color: #CCC;
+        font-family: Consolas, monospace;
+        cursor: initial;
+    }
+
+        .doc-1-0 .code code pre {
+            padding: 9px 12px 9px 12px;
+            margin: 0px;
+            overflow-x: auto;
+            -webkit-touch-callout: unset;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .doc-1-0 .code table {
+            border: solid gray;
+            border-width: 0px;
+            border-bottom-width: 1px;
+            background-color: #333;
+        }
+
+        .doc-1-0 .code .code-truncation-toggle {
+            display: none;
+        }
+
+            .doc-1-0 .code table tr td {
+                width: 100%;
+            }
+
+                .doc-1-0 .code table tr .code-title {
+                    width: 100%;
+                    color: white;
+                }
+
+
+    .doc-1-0 .warning {
+        background-color: #EEA !important;
+    }
+
+    .doc-1-0 .risky {
+        background-color: #F00 !important;
+    }
+
+    .doc-1-0 .infobox {
+        padding: 6px 9px;
+        background-color: #AAE;
+        color: black;
+        max-width: 450px;
+        border-radius: 9px;
+    }
+
+        .doc-1-0 .infobox h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .doc-1-0 .infobox p {
+            margin: 0;
+            text-align: justify;
+        }
+
+    .doc-1-0 .navigation {
+        display: none;
+    }
