@@ -84,6 +84,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 acb.dghost = ou1;
                 acb.onclick = function () { document.body.removeChild(this.dghost); }
                 document.body.appendChild(ou1);
+                acb.Focus();
             }
         },
         "Launchers": {
