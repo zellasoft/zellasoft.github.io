@@ -2,18 +2,19 @@
     return {
         "Run": function () {
             let branch = ZellaSoft.View.Parameter('branch') || 'alpha';
-            if (branch == 'alpha')
+            if (branch == 'alpha') {
                 document.getElementById('W10MSideload').href = 'ZellaStore_Alpha.appxbundle';
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker red">Alpha</span>';
-            else if (branch == 'beta')
+            } else if (branch == 'beta') {
                 document.getElementById('W10MSideload').href = 'ZellaStore_Beta.appxbundle';
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker yellow">Beta</span>';
-            else if (branch == 'preview')
+            } else if (branch == 'preview') {
                 document.getElementById('W10MSideload').href = 'ZellaStore_Preview.appxbundle';
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store <span class="marker green">Preview</span>';
-            else if (branch == 'release')
+            } else if (branch == 'release') {
                 document.getElementById('W10MSideload').href = 'ZellaStore_Release.appxbundle';
                 document.getElementById('ProductDisplayName').innerHTML = 'Zella Store';
+            }
             let bsupported = false;
             if (ZellaSoft.IsLedge()) {
                 let uwpinstall = document.getElementById('W10MSideload');
