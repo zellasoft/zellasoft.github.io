@@ -1,0 +1,229 @@
+<link rel="stylesheet" href="/document-1.0.css" type="text/css">
+<meta name="GuideTitle" content="Using open-store URI Scheme">
+<meta name="GuideAuthor" content="https://zggpuo8dzef58k6hxxgvj3z2.t.me/">
+<div class="doc-1-0">
+    <h1 id="using-open-store-uris">Using open-store URIs</h1>
+    <nav id="center-doc-outline">
+    	<h2 id="in-this-article">In this article</h2>
+    	<ol>
+    		<li>
+    			<a href="#opening-a-store-to-specific-sections">Opening a Store to specific sections</a>
+    		</li>
+    		<li>
+    			<a href="#opening-to-a-specific-product">Opening to a specific product</a>
+    		</li>
+    		<li>
+    			<a href="#launching-the-rating-and-review-experience-for-a-product">Launching the rating and review experience for a product</a>
+    		</li>
+    		<li>
+    			<a href="#searching-in-a-store">Searching in a Store</a>
+    		</li>
+    	</ol>
+    </nav>
+    <p>This topic describes the 
+    	<strong>open-store:</strong> URI scheme. Your app can use this URI scheme to launch 
+    	<strong>any third-party</strong> Store app to specific pages in the store by using the 
+    	<a href="/Guides/uwp/api/windows.system.launcher.launchuriasync"><strong>LaunchUriAsync</strong></a> method.
+    </p>
+    <p>For example, you can open a Store to it's Games page using the following code:</p>
+    <div class="code">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="code-title">Launch a Store's Gaming Collection - C#</td>
+                    <td><button onclick="App.Code.Copy(this);">Copy</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <code codelang="CSharp">
+            <pre>using Windows.System;
+
+Uri uri = new Uri(&quot;open-store://navigatetopage/?Id=Gaming&quot;);
+bool result = await Launcher.LaunchUriAsync(uri);</pre>
+        </code>
+        <a class="code-truncation-toggle" href="#">Expand</a>
+    </div>
+    <div>
+    	<ahref="#opening-a-store-to-specific-sections"></a>
+    	<h2 id="opening-a-store-to-specific-sections">Opening a Store to specific sections</h2>
+    </div>
+    <p>You can launch a Store app to a specific collections page or section using the following options.</p>
+    <div>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>URI Scheme</th>
+    				<th>Description</th>
+    				<th>Notes</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>open-store://home</td>
+    				<td>Launches the home page of a Store app.</td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>open-store://navigatetopage/?Id=[collection]</td>
+    				<td>Launches a Store app to the specified collection if supported by the Store app. If not, prompt the user wether to dismiss or re-launch the URI. (Possibly to be handled by a different Store app.)</td>
+    				<td>Collections include: 
+    					<code>Home</code>, 
+    					<code>Gaming</code>, 
+    					<code>Entertainment</code>, 
+    					<code>Productivity</code>, 
+    					<code>Mods</code>, and 
+    					<code>Tools</code>, but note that available collections can vary by Store app and they may have additional collections.
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://downloadsandupdates</td>
+    				<td>Launches the downloads and updates page. (This should not be used as a trigger for updating.)</td>
+    				<td>This is probably not supported by most Store apps.</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://settings</td>
+    				<td>Launches a Store's settings page.</td>
+    				<td></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+    <div>
+    	<a href="#opening-to-a-specific-product"></a>
+    	<h2 id="opening-to-a-specific-product">Opening to a specific product</h2>
+    </div>
+    <p>Due to the fact that in practice it's impossible for all Stores to share the same database  with the same UID for each package (which would also defeat the purpose of having more than one), we need to use something more reliable. By using a classic Product ID for an app you can't launch an open-store client directly to a product detail page (PDP) for a specific product. The logical solution to this problem is to use something that can be safely assumed is different for each package, but the same for identical packages in all Stores. This way we can find them without the need of a database between Stores. This is where the Package Family Name (PFN) or App ID shines. These values can be found in the App's manifest and are a clear identifier of each app no matter in which Store they are.</p>
+    <p>Important: 
+    	<a href="/Guides/package-family-name-conventions">Package Family Name (PFN) conventions</a>
+    </p>
+    <p>Important: 
+    	<a href="/Guides/avoid-conflicts-between-original-and-modded-apps">How to avoid conflicts between original and modded apps</a>
+    </p>
+    <div>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>URI Scheme</th>
+    				<th>Description</th>
+    				<th>Notes</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>open-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe</td>
+    				<td>Launches the full product details page (PDP) for a product using it's PFN.</td>
+    				<td>This is the recommended way.</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117</td>
+    				<td>Launches the full product details page (PDP) for a product. (Used for XAPs for example)</td>
+    				<td>Use this method for pre-UWP packages. Using the App ID will still work even with some UWP packages, but not recommended.</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://pdp/?ProductId=9WZDNCRFHVJL</td>
+    				<td>Launches the full product details page (PDP) for a product using an 
+    					<strong>ms-windows-store:</strong> Product ID.
+    				</td>
+    				<td>Note: This is mentioned for compatibility with the 
+    					<strong>ms-windows-store:</strong> URI Scheme and should mostly be ignored.
+    				</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+    <div>
+    	<a href="#launching-the-rating-and-review-experience-for-a-product"></a>
+    	<h2 id="launching-the-rating-and-review-experience-for-a-product">Launching the rating and review experience for a product</h2>
+    </div>
+    <p>To enable users to review your app, you can link to that PDP and launch directly into the rating and review dialog. Package Family Name (PFN) is the recommended method to launch a Store app to a specific product detail page.</p>
+    <div>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>URI Scheme</th>
+    				<th>Description</th>
+    				<th>Notes</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>open-store://review/?PFN=Microsoft.Office.OneNote_8wekyb3d8bbwe</td>
+    				<td>Launches the write a review experience for a product.</td>
+    				<td>Using product family name is the recommended way.</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://review/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117</td>
+    				<td>Launches the write a review experience for a product.</td>
+    				<td>Using App ID is not recommended but available for XAPs and some UWP packages.</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+    <p>For example, you can open a Store to rate the your app using the following code:</p>
+    <div class="code">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="code-title">Launch a Store's Gaming Collection - C#</td>
+                    <td><button onclick="App.Code.Copy(this);">Copy</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <code codelang="CSharp">
+            <pre>using Windows.System;
+
+string pkgname = Package.Current.Id.FamilyName;
+Uri uri = new Uri(&quot;open-store://review/?PFN=&quot; + pkgname);
+bool result = await Launcher.LaunchUriAsync(uri);</pre>
+        </code>
+        <a class="code-truncation-toggle" href="#">Expand</a>
+    </div>
+    <div>
+    	<a href="#searching-in-a-store"></a>
+    	<h2 id="searching-in-a-store">Searching in a Store</h2>
+    </div>
+    <p>You can launch a Store app directly into search results with several supported methods for searching store content.</p>
+    <div>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>URI Scheme</th>
+    				<th>Description</th>
+    				<th>Notes</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>open-store://assoc/?Tags=Photos_Rich_Media_Edit, Camera_Capture_App</td>
+    				<td>Launches a search for products associated with one or more tags.</td>
+    				<td>Tags must be separated by commas. (Spaces around the commas are allowed.)</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://search/?query=OneNote</td>
+    				<td>Launches a search for the specified query.</td>
+    				<td>Spaces in the query are allowed.</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://browse/?type=Apps&amp;cat=Health+%26+fitness</td>
+    				<td>Launches a search for products in a collection.</td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>open-store://publisher/?name=ZellaSoft</td>
+    				<td>Launches a search for products from the specified publisher.</td>
+    				<td>Publisher's name can be found in the PFN. Publishers register with a name which they have to use as a prefix in their PFN followed my the first '.' (dot).</td>
+    			</tr>
+    			<tr>
+    				<td>open-store://assoc/?FileExt=pdf</td>
+    				<td>Launches a search for products associated with a file extension.</td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>open-store://assoc/?Protocol=wifi</td>
+    				<td>Launches a search for products associated with a protocol.</td>
+    				<td></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+</div>
