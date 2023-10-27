@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="588px" height="588px">
+<g>
+<clipPath id="cp1"><polygon points="180,588 116,308 392,392" /></clipPath>
+<polygon points="180,588 116,308 392,392" stroke="#00cfdc" stroke-width="64" stroke-opacity="1" clip-path="url(#cp1)" />
+<rect x="344px" y="104px" width="176px" height="176px" transform="translate(432,192) rotate(10) translate(-432,-192)" stroke="#ff0073" stroke-width="32" stroke-opacity="1" />
+<ellipse cx="136px" cy="120px" rx="88px" ry="88px" stroke="#7800fe" stroke-width="32" stroke-opacity="1" />
+</g>
+</svg>
