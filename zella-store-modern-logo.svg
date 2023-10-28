@@ -19,12 +19,12 @@
     </linearGradient>
   </defs>
 <g>
-<path id="pathBackSheet" fill="LightGray" d="M 0,64 v 24 h 256 v-24 Z"/>
-<path id="pathBackSheetShadowLeft" fill="url(#centricShadow)" d="M 144,64 v 24 h 80 v -24 Z"/>
-<path id="pathBackSheetShadowRight" fill="url(#centricShadow)" d="M 32,64 v 24 h 80 v -24 Z"/>
+<path id="pathBackSheet" fill="LightGray" d="M 0,64 v 30 h 256 v -30 Z"/>
+<path id="pathBackSheetShadowLeft" fill="url(#centricShadow)" d="M 144,64 v 30 h 80 v -30 Z"/>
+<path id="pathBackSheetShadowRight" fill="url(#centricShadow)" d="M 32,64 v 30 h 80 v -30 Z"/>
 <path id="pathHandleInside" fill="LightGray" d="M 84,0 v 24 H 172 v -24 Z"/>
 <path id="pathHandleInsideShadow" fill="url(#sideShadows)" d="M 84,0 v 24 H 172 v -24 Z"/>
-<path id="pathHandles" fill="WhiteSmoke" d="M 60,88 V 24 l 24,-24 H 172 l 24,24 V 88 h -24 V 0 H 84 V 88 Z"/>
+<path id="pathHandles" fill="WhiteSmoke" d="M 60,94 V 24 l 24,-24 H 172 l 24,24 V 94 h -24 V 0 H 84 V 94 Z"/>
 <path id="pathFrontSheet" fill="GhostWhite" d="M 0,88 v 120 c 0,48 0,48 48,48 h 160 c 48,0 48,0 48,-48 V 88 Z"/>
 </g>
 <g>
