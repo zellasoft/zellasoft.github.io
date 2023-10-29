@@ -1,7 +1,19 @@
 html {
-    background-color: #FAFAFA;
-    height: 100%;
     --accent-color: highlight;
+    /*light theme: --accent-color-prohibited: #C69B48;*/
+    /*dark theme: --accent-color-prohibited: #B2923A;*/
+    --accent-color-prohibited: #B2923A;
+    --accent-compliment: #000000;
+    --page-background: #111111;
+    --panel-background: #222222;
+    --page-foreground: #fafafa;
+    --light-foreground: #aaaaaa;
+    --accent-light-compliment: #dddddd;
+    --accent-light-hover-compliment: #ffffff;
+    --accent-light-activated-compliment: #999999;
+    background-color: var(--page-background);
+    color: var(--page-foreground);
+    height: 100%;
 }
 
 html, body {
@@ -18,6 +30,10 @@ html, body {
     -ms-user-select: none;
     user-select: none;
     cursor: default;
+}
+
+.foreground path {
+    fill: var(--page-foreground);
 }
 
 .contentdialog {
@@ -62,7 +78,7 @@ html, body {
 
 button {
     border-width: 0px;
-    color: white;
+    color: var(--accent-compliment);
     background-color: var(--accent-color);
     padding: 5px 6px;
     border-radius: 5px;
@@ -116,7 +132,7 @@ button {
 }
 
 navbar {
-    background-color: white;
+    background-color: var(--panel-background);
     border: 0px;
     padding: 0px;
     margin: 0px;
@@ -139,7 +155,7 @@ navbar {
         font-family: 'Segoe UI', 'Helvetica Neue', 'sans-serif';
         line-height: 48px;
         text-decoration: none;
-        color: black;
+        color: var(--page-foreground);
     }
     navbar div .navbar-first {
         font-family: 'Segoe UI Semibold', 'Helvetica Neue', 'sans-serif';
@@ -147,7 +163,7 @@ navbar {
 
 .docked-btn {
     background-color: var(--accent-color);
-    color: #dddddd;
+    color: var(--accent-light-compliment);
     text-decoration: none;
     border: 0px;
     padding: 0px;
@@ -165,12 +181,12 @@ navbar {
 
     .docked-btn:hover {
         /*background-color: #56baed;*/
-        color: #ffffff;
+        color: var(--accent-light-hover-compliment);
     }
 
     .docked-btn:active {
         /*background-color: #2F6581;*/
-        color: #999999;
+        color: var(--accent-light-activated-compliment);
     }
 
     .docked-btn svg {
@@ -188,7 +204,7 @@ navbar {
     }
 
 .unsupported, .unsupported:hover, .unsupported:active {
-    background-color: #C69B48;
+    background-color: var(--accent-color-prohibited);
     cursor: not-allowed;
 }
 
@@ -223,6 +239,7 @@ center {
 .sub-tabs {
     padding: 9px;
     border-radius: 8px;
+    background-color: var(--panel-background);
 }
 
     .sub-tabs * {
@@ -266,7 +283,7 @@ blocks {
 }
 
 #ProductDisplayName {
-    color: dimgray;
+    color: var(--light-foreground);
     font-size: 22px;
     font-family: 'Segoe UI Semibold', "Helvetica Neue", "sans-serif";
     margin: 12px 6px;
@@ -302,7 +319,7 @@ blocks {
 .content-box {
     text-align: justify;
     max-width: 450px;
-    background-color: white;
+    background-color: var(--panel-background);
     margin: 6px 12px;
     border-radius: 6px;
 }
