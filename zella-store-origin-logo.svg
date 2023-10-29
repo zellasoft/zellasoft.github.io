@@ -41,7 +41,8 @@
 <path id="pathBackSheetShadowLeft" fill="url(#handleShadow)" d="M 56,70 v -32 h 32 v 32 Z"/>
 <path id="pathBackSheetShadowRight" fill="url(#handleShadow)" d="M 168,70 v -32 h 32 v 32 Z"/>
 </g>
-<clipPath id="baseClip"><path d="M 0,88 V 192 c 0,64 0,64 64,64 h 128 c 64,0 64,0 64,-64 V 88 c 0,-24 0,-24 -24,-24 h -208 c -24,0 -24,0 -24,24 Z" /></clipPath>
+<!-- <clipPath id="baseClip"><path d="M 0,88 V 192 c 0,64 0,64 64,64 h 128 c 64,0 64,0 64,-64 V 88 c 0,-24 0,-24 -24,-24 h -208 c -24,0 -24,0 -24,24 Z" /></clipPath> -->
+<clipPath id="baseClip"><path d="M 0,88 V 168 c 0,88 0,88 88,88 H 168 c 88,0 88,0 88,-88 V 88 c 0,-24 0,-24 -24,-24 H 24 c -24,0 -24,0 -24,24 Z" /></clipPath>
 <clipPath id="prereleaseClip"><path d="M 3,189 v 3 c 0,61 0,61 61,61 h 128 c 61,0 61,0 61,-61 V 189 Z" /></clipPath>
 <g>
 <path d="M 0,64 v 70 H 256 v -70 Z" clip-path="url(#baseClip)" fill="url(#slice1Fill)" />
