@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="dark-theme">
+<head>
+    <title>Shim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Shim">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="180x180" href="/homescreen-apple-mobile.png">
+    <link href="style/chat.css" rel="stylesheet" />
+    <script src="script/chat.js"></script>
+</head>
+<body>
+    <div>Content goes here.</div>
+    <div style="width: 100px; height: 400px; background: red;"></div>
+    <div>Content goes here.</div>
+    <div style="width: 100px; height: 400px; background: green;"></div>
+    <div>Content goes here.</div>
+    <div style="width: 100px; height: 400px; background: blue;"></div>
+    <div>Content goes here.</div>
+    <div style="width: 100px; height: 400px; background: orange;"></div>
+    <div>Content goes here.</div>
+    <div style="width: 100px; height: 400px; background: yellow;"></div>
+    <div>Content goes here.</div>
+    <div style="width: 100px; height: 400px; background: red;"></div>
+    <div class="static-ui" style="z-index: 9;">
+        <div class="top-toolbar backdropblur">
+            <table style="width: 100%; border: none; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="48px">
+                        <div style="height: 48px;">
+                            <label for="backwards" class="for-icon" style="width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M353.83 542.17c-15.381-15.381-16.564-39.583-3.549-56.32l3.549-4.020 256-256c16.662-16.662 43.677-16.662 60.34 0 15.381 15.381 16.564 39.583 3.549 56.32l-3.549 4.020-225.797 225.83 225.797 225.83c15.381 15.381 16.564 39.583 3.549 56.32l-3.549 4.020c-15.381 15.381-39.583 16.564-56.32 3.549l-4.020-3.549-256-256z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <button id="backwards" onclick="alert('backwards');" style="display: none;">Back</button>
+                        </div>
+                    </td>
+                    <td width="48px">
+                        <div style="height: 48px;">
+                            <label for="profile" class="for-icon" style="width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M405.333 746.667c0 58.91 47.757 106.667 106.667 106.667s106.667-47.756 106.667-106.667c0-58.91-47.757-106.667-106.667-106.667s-106.667 47.756-106.667 106.667zM512 938.667c-106.039 0-192-85.961-192-192s85.961-192 192-192c106.039 0 192 85.961 192 192s-85.961 192-192 192zM225.078 321.643c31.946 35.593 115.305 105.024 286.922 105.024s254.976-69.431 286.921-105.024c7.138-7.953 11.746-20.877 11.746-39.475 0-38.016-30.818-68.834-68.834-68.834h-459.666c-38.016 0-68.833 30.818-68.833 68.834 0 18.598 4.607 31.522 11.744 39.475zM512 512c-198.378 0-304.066-81.702-350.428-133.359-26.029-29.001-33.572-65.421-33.572-96.474 0-85.146 69.023-154.167 154.167-154.167h459.666c85.146 0 154.167 69.022 154.167 154.167 0 31.053-7.543 67.473-33.57 96.474-46.366 51.657-152.051 133.359-350.43 133.359z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <button id="profile" onclick="alert('profile');" style="display: none;">Profile</button>
+                        </div>
+                    </td>
+                    <td>
+                        <label for="profile" style="width: 100%;">User</label>
+                    </td>
+                    <td width="48px">
+                        <div style="height: 48px;">
+                            <label for="more" class="for-icon" style="width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M597.333 768c0-47.128-38.204-85.333-85.333-85.333s-85.333 38.205-85.333 85.333c0 47.128 38.204 85.333 85.333 85.333s85.333-38.205 85.333-85.333zM597.333 512c0-47.13-38.204-85.333-85.333-85.333s-85.333 38.204-85.333 85.333c0 47.13 38.204 85.333 85.333 85.333s85.333-38.204 85.333-85.333zM512 170.667c47.13 0 85.333 38.204 85.333 85.333s-38.204 85.333-85.333 85.333c-47.13 0-85.333-38.204-85.333-85.333s38.204-85.333 85.333-85.333z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <button id="more" onclick="alert('more');" style="display: none;">More</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="keyboardinput" class="keyboard-toolbar backdropblur keyboard-hidden">
+            <table style="width: 100%; border: none; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="48px" style="vertical-align: bottom;">
+                        <div style="height: 48px;">
+                            <label for="attachment" class="for-icon" style="color: red; width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;" preserveAspectRatio="none">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M487.863 872.273c97.911 99.867 258.739 99.867 356.646 0 79.42-81.006 79.42-210.667 0-291.674l-307.443-313.587c-52.194-53.239-137.935-53.239-190.131 0-63.401 64.666-63.402 168.179-0.002 232.849l150.466 153.48c16.499 16.827 43.511 17.094 60.339 0.598s17.092-43.51 0.597-60.335l-150.467-153.485c-30.868-31.484-30.868-81.882 0.001-113.37 18.74-19.115 49.526-19.115 68.265 0l307.443 313.59c46.886 47.823 46.886 124.371 0 172.194-64.452 65.742-170.325 65.742-234.778 0l-266.851-272.186c-85.451-87.159-85.451-226.667 0-313.826 87.878-89.634 232.227-89.634 320.104 0l156.898 160.043c16.499 16.823 43.511 17.092 60.339 0.597 16.823-16.499 17.092-43.511 0.597-60.339l-156.898-160.038c-121.335-123.759-320.64-123.763-441.974-0.004-117.983 120.346-117.983 312.969 0 433.309l266.849 272.184z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <input id="attachment" type="file" style="display: none;">
+                        </div>
+                    </td>
+                    <td>
+                        <div style="width: 100%;"><textarea id="messagebody" placeholder="Send a message..." style="width: 100%; height: 1lh;" oninput="this.style.height = '1lh'; this.style.height = this.scrollHeight +'px'" onfocus="document.getElementById('keyboardinput').classList.remove('keyboard-hidden')" onblur="document.getElementById('keyboardinput').classList.add('keyboard-hidden')"></textarea></div>
+                    </td>
+                    <td width="48px" style="vertical-align: bottom;">
+                        <div style="height: 48px;">
+                            <label for="send" class="for-icon" style="width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M113.23 899.154l63.657-292.376c5.172-23.754 25.163-41.402 49.374-43.587l464.783-41.96c5.102-0.461 8.864-4.97 8.404-10.072-0.403-4.464-3.94-8.001-8.403-8.404l-464.785-41.977c-24.211-2.187-44.2-19.834-49.372-43.587l-63.656-292.355c-4.359-20.021 8.337-39.786 28.359-44.145 8.011-1.744 16.375-0.786 23.784 2.726l833.499 395.052c18.516 8.776 26.412 30.901 17.636 49.417-3.667 7.738-9.898 13.969-17.636 17.636l-833.5 395.052c-18.516 8.776-40.641 0.88-49.417-17.636-3.512-7.409-4.47-15.772-2.726-23.783z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <button id="send" onclick="alert('Send');" style="display: none;">Send</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bottom-toolbar backdropblur" style="">
+            <table style="width: 100%; border: none; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="48px" style="vertical-align: bottom;">
+                        <div style="height: 48px;">
+                            <label for="attachment" class="for-icon" style="color: red; width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;" preserveAspectRatio="none">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M487.863 872.273c97.911 99.867 258.739 99.867 356.646 0 79.42-81.006 79.42-210.667 0-291.674l-307.443-313.587c-52.194-53.239-137.935-53.239-190.131 0-63.401 64.666-63.402 168.179-0.002 232.849l150.466 153.48c16.499 16.827 43.511 17.094 60.339 0.598s17.092-43.51 0.597-60.335l-150.467-153.485c-30.868-31.484-30.868-81.882 0.001-113.37 18.74-19.115 49.526-19.115 68.265 0l307.443 313.59c46.886 47.823 46.886 124.371 0 172.194-64.452 65.742-170.325 65.742-234.778 0l-266.851-272.186c-85.451-87.159-85.451-226.667 0-313.826 87.878-89.634 232.227-89.634 320.104 0l156.898 160.043c16.499 16.823 43.511 17.092 60.339 0.597 16.823-16.499 17.092-43.511 0.597-60.339l-156.898-160.038c-121.335-123.759-320.64-123.763-441.974-0.004-117.983 120.346-117.983 312.969 0 433.309l266.849 272.184z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <input id="attachment" type="file" style="display: none;">
+                        </div>
+                    </td>
+                    <td>
+                        <div style="width: 100%;"><label for="messagebody" style="width: 100%;">Send a message...</label></div>
+                    </td>
+                    <td width="48px" style="vertical-align: bottom;">
+                        <div style="height: 48px;">
+                            <label for="send" class="for-icon" style="width: 48px; height: 48px; display: block;">
+                                <svg viewBox="0 0 1024 1024" style="width: 32px; height: 32px; padding: 8px; text-align: center; display: block;">
+                                    <g>
+                                        <path fill="var(--app-foreground)" fill-opacity="0.66" d="M113.23 899.154l63.657-292.376c5.172-23.754 25.163-41.402 49.374-43.587l464.783-41.96c5.102-0.461 8.864-4.97 8.404-10.072-0.403-4.464-3.94-8.001-8.403-8.404l-464.785-41.977c-24.211-2.187-44.2-19.834-49.372-43.587l-63.656-292.355c-4.359-20.021 8.337-39.786 28.359-44.145 8.011-1.744 16.375-0.786 23.784 2.726l833.499 395.052c18.516 8.776 26.412 30.901 17.636 49.417-3.667 7.738-9.898 13.969-17.636 17.636l-833.5 395.052c-18.516 8.776-40.641 0.88-49.417-17.636-3.512-7.409-4.47-15.772-2.726-23.783z" />
+                                    </g>
+                                </svg>
+                            </label>
+                            <button id="send" onclick="alert('Send');" style="display: none;">Send</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
