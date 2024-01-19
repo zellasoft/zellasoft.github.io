@@ -82,6 +82,7 @@ body {
 }
 
 .bottom-toolbar {
+    display: none; /*display: block;*/
     position: fixed;
     bottom: 0px;
     left: 0px;
