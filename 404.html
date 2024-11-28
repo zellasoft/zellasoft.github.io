@@ -3,7 +3,7 @@
   <head>
     <title>Error 404</title>
       <script>
-        location.replace("/InstallStore");
+        if (location.pathname == "/i/") location.replace("/InstallStore");
       </script>
   </head>
   <body>
@@ -11,6 +11,6 @@
     <br/>
     <span>The site you were looking for cannot be found.</span>
     <br/>
-    <a href="/InstallStore">Go back</a>
+    <a href="/">Go back</a>
   </body>
 </html>
